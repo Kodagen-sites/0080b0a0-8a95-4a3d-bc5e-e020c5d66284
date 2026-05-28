@@ -1,0 +1,10 @@
+[
+  { "slot": "section-about-hero",    "keyword": "drone engineering workshop carbon fiber",   "orientation": "landscape" },
+  { "slot": "section-contact-hero",  "keyword": "drone aerial coastline cinematic",          "orientation": "landscape" },
+  { "slot": "section-services-hero", "keyword": "drone pilot operating landing pad",         "orientation": "landscape" },
+  { "slot": "section-cta",           "keyword": "drone aerial dark sky moody",               "orientation": "landscape" },
+  { "slot": "og-image",              "keyword": "carbon fiber drone studio black",           "orientation": "landscape", "w": 1200, "h": 630 },
+  { "slot": "service-cinema",        "keyword": "cinema drone gimbal camera production",     "orientation": "landscape" },
+  { "slot": "service-survey",        "keyword": "drone survey mapping aerial field",         "orientation": "landscape" },
+  { "slot": "service-industrial",    "keyword": "industrial inspection drone infrastructure", "orientation": "landscape" }
+]

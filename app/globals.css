@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Noir & Gold palette — locked from intake */
+  --bg-color: #0A0A0A;
+  --fg-color: #E8D8AC;
+  --surface: #1F1F1F;
+  --primary: #D4A35A;
+  --accent: #D4A35A;
+  --contrast: #E8D8AC;
+  --muted: rgba(232, 216, 172, 0.55);
+
+  /* Section tone alternation — required by motion rule 33.1 */
+  --bg-primary:   #0A0A0A;
+  --bg-secondary: #131313;
+  --bg-tertiary:  #1F1F1F;
+  --bg-accent:    #14110a;
+
+  /* Text tokens (V1 premium luminance) */
+  --text-hero:    #FFFFFF;
+  --text-body:    rgba(232, 216, 172, 0.80);
+  --text-eyebrow: rgba(212, 163, 90, 0.95);
+  --text-muted:   rgba(232, 216, 172, 0.45);
+
+  /* Card overlay */
+  --card-tint:   rgba(15, 15, 15, 0.82);
+  --card-border: rgba(212, 163, 90, 0.18);
+
+  --hairline: rgba(232, 216, 172, 0.12);
+}
+
+* { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+html, body {
+  background: var(--bg-color);
+  color: var(--fg-color);
+  font-family: var(--font-body), system-ui, sans-serif;
+  overflow-x: clip;
+}
+
+body { min-height: 100vh; }
+
+::selection { background: var(--primary); color: var(--bg-color); }
+
+/* Section rhythm — clamp must stay ≤ 96px (rule 1) */
+.section-pad {
+  padding-block: clamp(48px, 6vw, 96px);
+  padding-inline: clamp(20px, 4vw, 64px);
+}
+
+.container-narrow { max-width: 1280px; margin-inline: auto; }
+.container-wide   { max-width: 1440px; margin-inline: auto; }
+
+.text-display { font-family: var(--font-display); letter-spacing: -0.01em; line-height: 0.92; }
+.text-eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--text-eyebrow); }
+
+.hairline { background: var(--hairline); height: 1px; width: 100%; }
+
+.bg-tone-1 { background: var(--bg-primary); }
+.bg-tone-2 { background: var(--bg-secondary); }
+.bg-tone-3 { background: var(--bg-tertiary); }
+.bg-tone-4 { background: var(--bg-accent); }
+
+.gold-rim { box-shadow: inset 0 0 0 1px rgba(212, 163, 90, 0.22); }
+
+.btn-gold {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.9rem 1.6rem;
+  background: var(--primary); color: #0A0A0A;
+  font-family: var(--font-body); font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.78rem;
+  border-radius: 9999px;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+.btn-gold:hover { filter: brightness(1.08); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.9rem 1.6rem;
+  background: transparent; color: var(--fg-color);
+  font-family: var(--font-body); font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.78rem;
+  border-radius: 9999px;
+  border: 1px solid var(--hairline);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
